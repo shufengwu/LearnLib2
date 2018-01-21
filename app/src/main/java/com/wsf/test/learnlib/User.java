@@ -2,18 +2,20 @@ package com.wsf.test.learnlib;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-
-import com.wsf.test.learnlib.databinding.ActivityMainBinding;
+import android.databinding.ObservableBoolean;
+import android.databinding.ObservableField;
 
 /**
  * Created by Shufeng.Wu on 2018/1/19.
  */
 
-public class User extends BaseObservable{
+/*public class User extends BaseObservable{
 
     private  String firstName;
 
     private  String lastName;
+
+    private boolean visible = true;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -32,11 +34,26 @@ public class User extends BaseObservable{
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-        notifyPropertyChanged(BR.firstName);
+        notifyPropertyChanged(com.wsf.test.learnlib.BR.firstName);
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        notifyPropertyChanged(BR.lastName);
+        notifyPropertyChanged(com.wsf.test.learnlib.BR.lastName);
     }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+}*/
+
+public class User{
+
+    /*public final ObservableField<String> firstName = new ObservableField<>();
+    public final ObservableField<String> lastName = new ObservableField<>();
+    public final ObservableBoolean visible = new ObservableBoolean();*/
 }
