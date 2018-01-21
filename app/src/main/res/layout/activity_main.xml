@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.wsf.test.learnlib.MainActivity">
+    <data>
+        <import type="com.wsf.test.learnlib.MyStringUtils"/>
+        <variable name="user" type="com.wsf.test.learnlib.User"/>
+        <variable name="mainActivity" type="com.wsf.test.learnlib.MainActivity"/>
+        <variable name="content" type="String"/>
+        <variable name="longClickContent" type="String"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{MyStringUtils.capitalize(user.firstName ?? user.lastName)}"
+                android:onClick="@{mainActivity::onClick}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{MyStringUtils.capitalize(user.lastName)}"
+                android:layout_marginTop="50dp"
+                android:onClick="@{() -> mainActivity.showToast(content)}"
+                android:onLongClick="@{()->mainActivity.showLongClickToast(longClickContent)}"/>
+            <Button
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="測試"
+                android:layout_marginTop="50dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>
